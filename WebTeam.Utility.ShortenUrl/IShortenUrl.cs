@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WebTeam.Utility.ShortenUrl
 {
     public interface IShortenUrl
     {
-        string Get(string longUrl);
+        Task<string> GetShorten(Dictionary<string, string> parameters = null);
     }
 }
