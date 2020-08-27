@@ -1,9 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ShortenUrl</PackageId>
+    <Version>1.0.0</Version>
     <Authors>WebTeam</Authors>
+    <Company>WebTeam</Company>
+    <PackageDescription>ShortenUrl.</PackageDescription>
+    <RepositoryUrl>https://github.com/NoDreamWeb/ShortenUrl</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
