@@ -13,9 +13,9 @@ namespace TestingConsole
             ServiceProvider serviceProvider = new DIServiceProvider().ServiceProvider;
             IShortenUrl shortenUrl = serviceProvider.GetService<IShortenUrl>();
             Console.WriteLine("start");
-            var test= await shortenUrl.GetShorten(new System.Collections.Generic.Dictionary<string, string>() {
-                { "long_url","https://dev.otandp.com:18080/hk-oap/oa"}
-            });
+            var test = await shortenUrl.GetShorten(new BitlyParams() 
+                { long_url = "https://dev.otandp.com:18080/hk-oap/oa"}
+            );
         }
     }
 }

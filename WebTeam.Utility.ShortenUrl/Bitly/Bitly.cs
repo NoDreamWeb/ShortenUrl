@@ -11,9 +11,8 @@ namespace WebTeam.Utility.ShortenUrl
 {
     public class Bitly : IShortenUrl
     {
-        public static string ProviderName = "Bitly";
         public string AccessToken { get; set; }
-        private const string BaseUrl = "https://api-ssl.bitly.com/v4";
+        public string BaseUrl = "https://api-ssl.bitly.com/v4";
         private const string BearerAuthScheme = "Bearer";
 
         public Bitly(ShortenUrlOptions options)
@@ -27,7 +26,7 @@ namespace WebTeam.Utility.ShortenUrl
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 
-        public async Task<string> GetShorten(Dictionary<string, string> parameters = null)
+        public async Task<string> GetShorten(IRequestParameters parameters)
         {
             string url = $"{BaseUrl}/shorten";
             

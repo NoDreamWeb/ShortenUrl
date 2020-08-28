@@ -7,6 +7,8 @@ namespace WebTeam.Utility.ShortenUrl
    public class ShortenUrlOptions
     {
         public string Default { get; set; }
-        public Dictionary<string,string> Bitly { get; set; }
+
+        public Dictionary<string, string> Bitly { get; set; }
+        
     }
 }

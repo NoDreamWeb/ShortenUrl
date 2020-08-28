@@ -7,6 +7,6 @@ namespace WebTeam.Utility.ShortenUrl
 {
     public interface IShortenUrl
     {
-        Task<string> GetShorten(Dictionary<string, string> parameters = null);
+        Task<string> GetShorten(IRequestParameters parameters);
     }
 }

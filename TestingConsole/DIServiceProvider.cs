@@ -24,10 +24,8 @@ namespace TestingConsole
                 ContentRootFileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
             };
             var serviceCollection = new ServiceCollection();
-            var shortenUrlSettings = root.GetSection("ShortenUrl");
-            serviceCollection.Configure<ShortenUrlOptions>(shortenUrlSettings);
 
-            serviceCollection.AddShortenUrl();
+            serviceCollection.AddShortenUrl(root);
 
             ServiceProvider = serviceCollection.BuildServiceProvider();
         }
