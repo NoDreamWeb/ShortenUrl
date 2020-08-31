@@ -1,10 +1,16 @@
 name: publish to nuget
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'type build'
+        # Default value if no value is explicitly provided
+        default: 'build'
+        # Input has to be provided for the workflow to run
+        required: true
 
 jobs:
   build:
