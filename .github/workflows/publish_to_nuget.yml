@@ -27,5 +27,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    - name: add nuget source
+      run: dotnet nuget add source https://nuget.pkg.github.com/NoDreamWeb/index.json -n "GPR" -u NoDreamWeb -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+    - name: push nuget package
+      run: dotnet nuget push /home/runner/work/ShortenUrl/ShortenUrl/WebTeam.Utility.ShortenUrl/bin/Release/*.nupkg --source "GPR"  --skip-duplicate
